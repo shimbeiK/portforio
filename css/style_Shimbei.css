@@ -1,0 +1,995 @@
+/*--------------------------------
+全体の設定
+---------------------------------*/
+:root {
+  --fullback: #003714;
+  --littledark: hsl(0, 0%, 20%);
+  --bright: #ffffff;
+  --main: #ffffff;
+  --black: rgba(0, 0, 0, 0.70);
+  --main-text: #003714;
+  --insertcolor: rgb(245, 169, 169);
+}
+
+body{
+  text-align:center;
+  font-family: "Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3", 
+  "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic,
+  "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: .8px;
+  color: var(--main-text);
+  background-color: var(--fullback);
+  /* background-color: rgb(0, 0, 0, 0.7); */
+  margin: auto;
+  padding: 0;
+  max-width: 93vw;
+  overflow-x: hidden;
+
+}
+
+/* 斜めをタイトルを強調する*/
+.slanting-background{
+  position: relative;
+}
+
+.slanting-background::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -80px;
+  height: 10%;
+  padding: 20px;
+  background-color: var(--insertcolor);
+  transform: skewY(-0deg);
+  z-index: -1;
+}
+
+.icon .icon-image{
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  top: 5px;
+  left: 50px;
+}
+
+ .section-heading{
+  text-align: center;
+  font-size: 70px;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: -2%;
+  color: var(--main);
+}
+
+th ,td{
+  white-space: nowrap;
+}
+
+li{
+  text-align: left;
+}
+
+ul{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+a{
+  color: var(--main);
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sec-grid{
+  flex-wrap: wrap;
+  border: double 12px var(--fullback);  
+  padding: 2%;
+  background-color: var(--main);
+  color: var(--main-text);
+}
+
+.grid-inner{
+  display: flex;
+  flex: 0 0 46%;
+  justify-content: space-between;
+}
+
+.section-body .works{
+  border: solid 2px;  
+  padding: 2%;
+}
+
+.section-lead{
+  color: var(--main);
+}
+
+.section-lead .works-url-link{
+  color: var(--insertcolor);
+}
+
+.section-lead .works-url-link:hover{
+  color: var(--main);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  width: 100vw;
+  height: 80px;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  z-index: 5;
+}
+
+/* .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 540px;
+  background: url(../img/header.png) center/cover no-repeat;
+} */
+
+iframe{
+ width:700px;
+ height:400px;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 44px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #fff;
+}
+
+.logo-name span {
+  opacity: 0;
+  -webkit-transition: .6s ease-in-out;
+  transition: .6s ease-in-out;
+}
+
+.logo-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 88px;
+  font-weight: normal;
+  line-height: 1;
+  display: block;
+  letter-spacing: .1em;
+  color: #fff;
+}
+
+.logo-title span {
+  opacity: 0;
+  -webkit-transition: .6s ease-in-out;
+  transition: .6s ease-in-out;
+}
+
+.menu-line{
+  position: fixed;
+  right: 120px;
+  top: 30px;
+  font-size: 15px;
+}
+
+.hamburger {
+  width: 8vw;
+  height: 60px;
+  position: fixed;
+  right: 30px;
+  top: 20px;
+  float: right;
+}
+
+.hamburger span {
+  position: absolute;
+  width: 5.1vh;
+  height: 0.7vh;
+  background-color: var(--fullback);
+  transition: .7s;
+}
+
+.hamburger span:first-of-type {
+  top: 20%;
+}
+
+.hamburger span:nth-of-type(2) {
+  top: 50%;
+}
+
+.hamburger span:last-of-type {
+  top: 80%;
+}
+
+.hamburger.active span:first-of-type {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.hamburger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:last-of-type {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+.slide-menu {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 65px;
+  width: 100%;
+  left: 0;
+  transform: translateX(100%);
+  transition: .5s;
+  color: #fff;
+}
+
+.slide-menu li {
+  color: #fff;
+  line-height: 400%;
+  text-align: center;
+  max-width: 90vw;
+  list-style: none;
+}
+
+.slide-menu.active {
+  transform: translateX(0);
+}
+
+.out-refer{
+  color:var(--fullback);
+  font-weight: bold;
+}
+
+/*--------------------------------
+全体のデザイン
+---------------------------------*/
+/*・左右交互に寄せる 
+  ・アウトラインをとる*/
+  .about-section .inner{
+    max-width: 80vw;
+    margin-top: 90px;
+    float: left;
+    margin-bottom: 8%;
+  }
+
+  .career-section .inner{
+    max-width: 80vw;
+    float: right;
+    margin-bottom: 8%;
+  }
+
+  .qualification-section{
+    max-width: 80vw;
+    float: left;
+    margin-bottom: 8%;
+  }
+
+  .skill-section{
+    margin-bottom: 8%;
+  }
+
+  .works-section{
+    margin-bottom: 8%;
+  }
+
+  .contact-section{
+    margin-bottom: 8%;
+  }
+
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+    margin-bottom: 30px;
+  }
+/*--------------------------------
+アバウトセクション
+---------------------------------*/
+/* 人がもたれかかるようなデザイン */
+.pull-image{
+  width: 200px; /* 50%のビューポート幅に対する幅 */
+  aspect-ratio: 1 / 1; /* 16:9のアスペクト比 */
+  align-items: left;
+}
+
+.pull-image-wrapper{
+  position: relative;
+  flex: 0 0 60px;
+  margin-left: -40px;
+  bottom: -120px;
+  z-index: 0;
+}
+
+.push-image{
+  width: 200px; /* 50%のビューポート幅に対する幅 */
+  aspect-ratio: 1 / 1; /* 16:9のアスペクト比 */
+  align-items: left;
+}
+
+.push-image-wrapper{
+  position: relative;
+  bottom: 0px;
+  right: -70px;
+  z-index: 0;
+}
+.controll-image{
+  width: 150px; /* 50%のビューポート幅に対する幅 */
+  aspect-ratio: 1 / 1; /* 16:9のアスペクト比 */
+  align-items: left;
+}
+
+.controll-image-wrapper{
+  position: relative;
+  flex: 0 0 60px;
+  margin-left: -20px;
+  z-index: 0;
+}
+
+.about-body{
+  flex-wrap: wrap;
+}
+/*--------------------------------
+キャリアセクション
+---------------------------------*/
+/* シンプルに、文字大き目で。 */
+
+
+/*--------------------------------
+スキルセクション
+---------------------------------*/
+/*・見やすく大きく
+  ・横に二分割 */
+  .skill-items{
+    max-width: 25vw;
+  }
+
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center; /* 主軸方向（横方向）を中央に配置 */
+    align-items: center; /* 交差軸方向（縦方向）を中央に配置 */
+  }
+  
+  .skill-item {
+    margin-bottom: 0px;
+  }
+
+  .skill-image{
+    width: 15vw; /* 50%のビューポート幅に対する幅 */
+    aspect-ratio: 1 / 1; /* 16:9のアスペクト比 */
+    align-items: center;
+  }
+
+  .skill-content{
+    max-width: 25vw;
+    overflow-wrap: break-word;
+  }
+
+.skill-title{
+  text-align: center;
+  font-size: 120%;
+}
+
+.python-entire, .micon-entire, .ros-entire{
+  background-color: var(--bright);
+  color: var(--fullback);
+  border: solid 5px transparent;
+  border-radius: 10%;
+  padding: 0.5%;
+}
+
+.cpp-entire, .web-entire, .tool-entire{
+  color: var(--main);
+}
+
+/*--------------------------------
+資格セクション
+---------------------------------*/
+/* 証明を載せたいね */
+
+
+/*--------------------------------
+ワークセクション
+---------------------------------*/
+/*・横に三分割
+  ・セクションを分けて、+を押したら詳細表示 */
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center; /* 主軸方向（横方向）を中央に配置 */
+  align-items: center; /* 交差軸方向（縦方向）を中央に配置 */
+}
+
+.works-item {
+  margin-bottom: 20px;
+  border: solid 5px var(--bright);
+  border-radius: 10%;
+  height: 40%;
+  margin-right: 20px;
+}
+
+.works-image{
+  padding-top: 3%;
+  width: 500px; /* 50%のビューポート幅に対する幅 */
+  aspect-ratio: 16 / 9; /* 16:9のアスペクト比 */
+  align-items: center;
+}
+
+.works-body{
+  /* max-width: 30vw; */
+  width: 40vw;
+  overflow-wrap: break-word;
+  flex-wrap: wrap;
+}
+
+.works-title{
+  text-align: center;
+  font-size: 140%;
+}
+
+/* .sotsugyokenkyu .works-url-link, .kosensai3 .works-url-link, .portfolio .works-url-link{
+  color: var(--main);
+  border-bottom: 3px solid rgb(245, 169, 169); 下線を追加し、色を指定
+  border: solid 5px var(--insertcolor);
+}
+
+.kisokenkyu .works-url-link, .scrolegame .works-url-link, .minesweeper .works-url-link{
+  color: var(--fullback);
+} */
+
+/* .kisokenkyu, .scrolegame, .minesweeper{ */
+.works-item{
+  background-color: var(--bright);
+  color: var(--fullback);
+  padding: 0.5%;
+}
+
+.works-url-link{
+  color: var(--insertcolor);
+}
+
+.works-url-link:hover{
+  color: var(--fullback);
+}
+
+.pp-content{
+  width: 65%;
+  height: auto;
+  float:left;
+  overflow: auto;
+  box-sizing: border-box;
+  border-right: 4px dotted var(--fullback); /* 右側に線を追加 */
+}
+
+.pp-item{
+  padding-left: 3%;
+  width: 35%;
+  overflow: auto;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.pp-title{
+  font-size: 25px;
+}
+
+/*--------------------------------
+ポップアップのデザイン
+---------------------------------*/
+.overlay {
+  position: fixed;
+  top: 0vh;
+  bottom: 0vh;
+  left: 0vw;
+  right: 0vw;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  position: relative;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  color:var(--fullback);
+  /* border-radius: 5px; */
+  width: 100%;
+  position: flex;
+  transition: all .5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+  position: absolute;
+  top: -5%;
+  left: 5%;
+  transition: all 200ms;
+  font-size:10vw;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--fullback);
+}
+
+.popup .close:hover {
+  color: var(--littledark);
+}
+
+.popup .content img {
+  display: flex;
+  justify-content: center;
+}
+
+.pp-content{
+  padding-left: 3%;
+  padding-right: 3%;
+  text-align: left;
+}
+/*--------------------------------
+モーダルのデザイン
+---------------------------------*/
+.over-window{
+  display: none;
+}
+
+    /* モーダルのスタイル */
+    .modal {
+      width: 90%;
+      height: 80%;
+      display: none; /* 初期状態では非表示 */
+      position: fixed; /* フォームがスクロールしても固定 */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 3px solid var(--fullback);
+      z-index: 10;
+      font-size: 18px;
+      color: var(--fullback);
+      /* max-height: 90vh;  モーダルの最大高さを指定 */
+      overflow-y: auto; /* スクロール可能にする */
+      transition: all .5s ease-in-out;
+    }
+
+  /* モーダルの背後の背景スタイル */
+  .modal-background {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* 透明な黒背景 */
+      z-index: 1;
+  }
+
+  /* 閉じるボタンのスタイル */
+  .modal .close {
+    color: var(--fullback);
+    float: right;
+    font-size: 5vw;
+    font-weight: bold;
+}
+
+.modal .close:hover {
+  color: var(--littledark);
+}
+
+.feature-title, .outline-title{
+  font-size: 25px;
+  font-style: 8;
+}
+
+.video-link{
+  color: var(--insertcolor);
+}
+
+.video-link:hover{
+  color: var(--fullback);
+}
+
+/*--------------------------------
+コンタクトセクション
+---------------------------------*/
+.contact-list {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.contact-item {
+  width: 100px;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.contact-name {
+  font-size: 30px;
+  display: block;
+  margin-top: 5px;
+  color: var(--insertcolor);
+}
+
+.contact-name:hover{
+  color: var(--main);
+}
+.contact-image {
+  width: 90px;
+  background-color: #fff;
+}
+
+.contact-image:hover {
+  animation:1.5s linear infinite rotation;
+}
+
+/*-- 回転 --*/
+@keyframes rotation{
+  0%{ transform:rotate(0);}
+  100%{ transform:rotate(360deg); }
+}
+
+.contact-text {
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+
+/*--------------------------------
+スマホサイズ
+---------------------------------*/
+@media screen and (orientation: portrait) { 
+  body{
+    font-size: 18px;
+  }
+
+  .section-heading{
+    font-size: 50px;
+  }
+
+  th ,td{
+    white-space: wrap;
+  }   
+  
+  /*--------------------------------
+全体のデザイン
+---------------------------------*/
+/*・左右交互に寄せる 
+  ・アウトラインをとる*/
+  .about-section .inner{
+    max-width: 92vw;
+    margin-top: 90px;
+    float: center;
+    margin-bottom: 8%;
+  }
+
+  .career-section .inner{
+    max-width:92vw;
+    float: center;
+    margin-bottom: 8%;
+  }
+
+  .qualification-section{
+    max-width: 92vw;
+    float: center;
+    margin-bottom: 8%;
+  }
+
+  .skill-section{
+    margin-bottom: 8%;
+  }
+
+  .works-section{
+    margin-bottom: 8%;
+  }
+
+  .contact-section{
+    margin-bottom: 8%;
+  }
+
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+    margin-bottom: 30px;
+  }
+/*--------------------------------
+アバウトセクション
+---------------------------------*/
+/* 人がもたれかかるようなデザイン */
+.pull-image{
+  width: 200px; /* 50%のビューポート幅に対する幅 */
+  aspect-ratio: 1 / 1; /* 16:9のアスペクト比 */
+  align-items: left;
+}
+
+.pull-image-wrapper{
+  display: none;
+}
+
+.push-image{
+  width: 200px; /* 50%のビューポート幅に対する幅 */
+  aspect-ratio: 1 / 1; /* 16:9のアスペクト比 */
+  align-items: left;
+}
+
+.push-image-wrapper{
+  display: none;
+}
+.controll-image{
+  width: 200px; /* 50%のビューポート幅に対する幅 */
+  aspect-ratio: 1 / 1; /* 16:9のアスペクト比 */
+  align-items: left;
+}
+
+.controll-image-wrapper{
+  display: none;
+}
+
+/*--------------------------------
+スキルセクション
+---------------------------------*/
+/*・見やすく大きく
+  ・横に二分割 */
+  .skill-items{
+    max-width: 90vw;
+  }
+
+  .skill-list {
+    display: grid;
+    margin: auto;
+    justify-content: center; /* 主軸方向（横方向）を中央に配置 */
+    align-items: center; /* 交差軸方向（縦方向）を中央に配置 */
+  }
+  
+  .skill-item {
+    margin-bottom: 6%;
+  }
+
+  .skill-image{
+    width: 40vw; /* 50%のビューポート幅に対する幅 */
+    aspect-ratio: 1 / 1; /* 16:9のアスペクト比 */
+    align-items: center;
+  }
+
+  .skill-content{
+    max-width: 90vw;
+    overflow-wrap: break-word;
+  }
+  
+.skill-title{
+  text-align: center;
+  font-size: 120%;
+}
+
+.python-entire, .micon-entire, .ros-entire{
+  background-color: var(--bright);
+  color: var(--fullback);
+  border: solid 5px transparent;
+  border-radius: 10%;
+  padding: 0.5%;
+}
+
+.cpp-entire, .web-entire, .tool-entire{
+  color: var(--main);
+}
+
+/*--------------------------------
+資格セクション
+---------------------------------*/
+/* 証明を載せたいね */
+
+
+/*--------------------------------
+ワークセクション
+---------------------------------*/
+/*・横に三分割
+  ・セクションを分けて、+を押したら詳細表示 */
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center; /* 主軸方向（横方向）を中央に配置 */
+  align-items: center; /* 交差軸方向（縦方向）を中央に配置 */
+}
+
+.works-item {
+  margin-bottom: 20px;
+  border: solid 5px var(--bright);
+  border-radius: 10%;
+  height: 40%;
+  margin-right: 20px;
+  width: 90vw;
+}
+
+.works-body{
+  /* max-width: 30vw; */
+  width: 90%;
+  overflow-wrap: break-word;
+  flex-wrap: wrap;
+}
+
+.works-image{
+  padding-top: 3%;
+  width: 80vw; /* 50%のビューポート幅に対する幅 */
+  aspect-ratio: 16 / 9; /* 16:9のアスペクト比 */
+  align-items: center;
+}
+
+.works-title{
+  text-align: center;
+  font-size: 140%;
+}
+
+.pp-content{
+  width: 95%;
+  height: auto;
+  float:left;
+  overflow: auto;
+  box-sizing: border-box;
+  border-right: none; /* 右側に線を追加 */
+}
+
+.pp-item{
+  padding-left: 3%;
+  width: 90%;
+  overflow: none;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+
+/*--------------------------------
+ポップアップのデザイン
+---------------------------------*/
+  .overlay {
+    position: fixed;
+    top: 0vh;
+    bottom: 0vh;
+    left: 0vw;
+    right: 0vw;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup {
+    position: relative;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    color:var(--fullback);
+    /* border-radius: 5px; */
+    width: 90%;
+    position: flex;
+    transition: all .5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  
+  .popup .close {
+    position: absolute;
+    top: -5%;
+    left: 5%;
+    transition: all 200ms;
+    font-size:10vw;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--fullback);
+  }
+  
+  .popup .close:hover {
+    color: var(--littledark);
+  }
+  
+  .popup .content img {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pp-content{
+    padding-left: 3%;
+    padding-right: 3%;
+    text-align: center;
+  }
+  /*--------------------------------
+  モーダルのデザイン
+  ---------------------------------*/
+      /* モーダルのスタイル */
+      .modal {
+        width: 80%;
+        height: 70%;
+        margin-top: 50px;
+        font-size: 16px;
+      }
+  
+    /* 閉じるボタンのスタイル */
+    .modal .close {
+      color: var(--fullback);
+      float: right;
+      font-size: 10vw;
+      font-weight: bold;
+  }
+  
+  .feature-title, .outline-title{
+    font-size: 20px;
+    font-style: bold;
+    text-align: left;
+  }
+
+  /* .over-window{
+    display: none;
+  } */
+  
+}  
